@@ -4,23 +4,24 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner teclado = new Scanner(System.in);
 
-        int numeroFuncionario;
-        int horasTrabalhadas;
-        double valorHora;
-        double salarioFuncionario;
+        int horaInicial;
+        int horaFinal;
+        int duracao;
 
-        System.out.println("Informe o número do funcionário: ");
-        numeroFuncionario = teclado.nextInt();
-        System.out.println("Informe o número de horas trabalhadas pelo funcionário: ");
-        horasTrabalhadas = teclado.nextInt();
-        System.out.println("Infomre o valor da hora de trabalho do funcionário: ");
-        valorHora = teclado.nextDouble();
+        System.out.println("Informe a hora inicial do jogo: ");
+        horaInicial = teclado.nextInt();
+        System.out.println("Informe a hora final do jogo: ");
+        horaFinal = teclado.nextInt();
 
-        salarioFuncionario = valorHora * horasTrabalhadas;
+        if(horaInicial < horaFinal){
+            duracao = horaFinal - horaInicial;
+        } else {
+            duracao = 24 - horaInicial + horaFinal;
+        }
 
-        System.out.println("Número do funcionário: " + numeroFuncionario);
-        System.out.println("Salário do funcionário: " + salarioFuncionario);
-        
+        System.out.println("O jogo durou " + duracao + " Hora(s)");
+
+
         teclado.close();
     }
 }
