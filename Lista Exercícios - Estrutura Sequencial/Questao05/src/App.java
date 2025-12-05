@@ -4,30 +4,30 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner teclado = new Scanner(System.in);
 
-        int codigo1;
-        int numeroPeças1;
-        double valorPeça1;
-        int codigo2;
-        int numeroPeças2;
-        double valorPeça2;
-        double valorPagar;
+        int codigoProduto;
+        int quantidade;
+        double valorPagar = 0;
 
-        System.out.println("Informe o código da peça 1: ");
-        System.out.println("Informe o número de peças 1: ");
-        System.out.println("Informe o valor de cada peça 1: ");
-        codigo1 = teclado.nextInt();
-        numeroPeças1 = teclado.nextInt();
-        valorPeça1 = teclado.nextDouble();
-        System.out.println("Informe o código da peça 2: ");
-        System.out.println("Informe o número de peças 2: ");
-        System.out.println("Informe o valor de cada peça 2: ");
-        codigo2 = teclado.nextInt();
-        numeroPeças2 = teclado.nextInt();
-        valorPeça2 = teclado.nextDouble();
+        System.out.println("Informe o Código do Produto: ");
+        codigoProduto = teclado.nextInt();
+        System.out.println("Informe a quantidade: ");
+        quantidade = teclado.nextInt();
 
-        valorPagar = (numeroPeças1 * valorPeça1) + (numeroPeças2 * valorPeça2);
+        if(codigoProduto == 1){
+            valorPagar = quantidade * 4.00;
+        } else if(codigoProduto == 2){
+            valorPagar = quantidade * 4.50;
+        } else if(codigoProduto == 3){
+            valorPagar = quantidade * 5.00;
+        } else if(codigoProduto == 4){
+            valorPagar = quantidade * 2.00;
+        } else if(codigoProduto == 5){
+            valorPagar = quantidade * 1.50;
+        } else {
+            System.out.println("O código não está disponível!");
+        }
 
-        System.out.println("Valor a pagar: " + valorPagar);
+        System.out.println("Total: " + valorPagar);
 
         teclado.close();
     }

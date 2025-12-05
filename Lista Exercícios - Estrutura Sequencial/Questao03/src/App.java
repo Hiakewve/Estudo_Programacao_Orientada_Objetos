@@ -3,25 +3,20 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner teclado = new Scanner(System.in);
-        
+
         int valorA;
         int valorB;
-        int valorC;
-        int valorD;
-        int diferenca;
 
-        System.out.println("Informe o valor de A: ");
+        System.out.println("Informe um valor: ");
         valorA = teclado.nextInt();
-        System.out.println("Informe o valor de B: ");
+        System.out.println("Informe um valor: ");
         valorB = teclado.nextInt();
-        System.out.println("Informe o valor de C: ");
-        valorC = teclado.nextInt();
-        System.out.println("Informe o valor de D: ");
-        valorD = teclado.nextInt();
 
-        diferenca = ((valorA * valorB) - (valorC * valorD));
-
-        System.out.println("Diferença: " + diferenca);
+        if(valorA % valorB == 0 || valorB % valorA == 0){
+            System.out.println("São multiplos!");
+        } else {
+            System.out.println("Não são multíplos!");
+        }
 
         teclado.close();
     }
